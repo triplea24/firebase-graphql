@@ -1,10 +1,9 @@
 import firebase from "firebase";
 import { filter, map } from "lodash";
 import { makeExecutableSchema } from "graphql-tools";
+import config from "./config";
 
-firebase.initializeApp({
-  databaseURL: "https://grafire-b1b6e.firebaseio.com"
-});
+firebase.initializeApp(config);
 
 const mapSnapshotToEntity = snapshot => ({
   id: snapshot.key,
